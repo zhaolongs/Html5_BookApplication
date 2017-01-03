@@ -1,0 +1,96 @@
+html {
+    font-size: 100px;
+}
+
+html, body {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.welcome_sec, .book_class_home, .book_add_class_home, .book_list_home, .book_add_book_home {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*welcome 区域 */
+.welcome_sec {
+    display: block;
+    background-color: #47802f;
+}
+
+.welcome_title {
+    height: 1.4rem;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -.7rem;
+    font-size: 0.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+/*首页*/
+.home_menu_div {
+    display: none;
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    width: auto;
+}
+
+h2 {
+    margin: 0;
+    background-color: #47802f;
+    color: #ffffff;
+    width: 100%;
+    line-height: 0.74rem;
+    height: 0.74rem;
+    font-size: 0.12rem;
+    text-align: center;
+}
+
+/*header {*/
+/*margin: 0;*/
+/*padding: 0.1rem;*/
+/*height: 0.5rem;*/
+/*line-height: 0.52rem;*/
+/*text-align: center;*/
+/*background: green;*/
+/*font-size: 0.22rem;*/
+/*color: white;*/
+/*}*/
+
+ul {
+    list-style-type: none;
+    font-size: 0.10rem;
+    height: auto;
+    width: auto;
+    border: solid 1px #ededed;
+    padding: 0.1rem;
+    margin: 0.2rem;
+}
+
+ul li {
+    display: inline;
+    list-style-type: none;
+    font-size: 0.10rem;
+    height: auto;
+    width: auto;
+    margin: 0.2rem;
+}
+
+.butt:hover {
+    background-color: #ededed;
+}
+
+.butt:active {
+    background-color: #ededed;
+}
+
