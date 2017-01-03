@@ -1,0 +1,14 @@
+.book_class_table{
+    margin: 0.08rem;
+    height: auto;
+    width: 98%;
+    font-size: 0.14rem;
+    border: solid 1px #e7e7e7;
+}
+
+.book_class_table th{
+    height: auto;
+    width: auto;
+    font-size: 0.14rem;
+    border: solid 0.5px #47802f;
+}
