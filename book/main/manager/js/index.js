@@ -62,6 +62,8 @@ var bookClassListRender = (function(){
             $('.book_add_book_home').css('display','none');
             $('.book_list_home').css('display','none');
 
+            //获取数据
+            getBookClassListData();
         }
     }
 })();

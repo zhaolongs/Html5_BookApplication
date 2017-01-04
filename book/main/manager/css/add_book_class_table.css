@@ -1,14 +1,16 @@
-.book_class_table{
-    margin: 0.08rem;
+.add_book_class_table{
+    margin-top: 0.18rem;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
     height: auto;
     width: 98%;
     font-size: 0.14rem;
     border: solid 1px #e7e7e7;
 }
 
-.book_class_table th{
+.add_book_class_table th,td{
     height: auto;
     width: auto;
     font-size: 0.14rem;
-    border: solid 0.5px #47802f;
+    border: solid 1px #e7e7e7;
 }

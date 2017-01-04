@@ -42,10 +42,11 @@ html, body {
     z-index: 999;
     position: absolute;
     bottom: 0;
-    width: auto;
+    width: 100%;
 }
 
 h2 {
+
     margin: 0;
     background-color: #47802f;
     color: #ffffff;

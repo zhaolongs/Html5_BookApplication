@@ -3,14 +3,14 @@
  */
 
 function baseURL(){
-     return "";
+     return "http://localhost:10008/Book//manager/";
 }
 
 function getBookListURL(){
 
 }
 function getBookClassListURL(){
-
+     return baseURL() +"getbookclass?time="+new Date();
 }
 
 function addBookURL(){
@@ -18,6 +18,7 @@ function addBookURL(){
 }
 function addBookClassURL(){
 
+     return baseURL() +"addbookclass?time="+new Date();
 }
 
 function deleteBookURL(){

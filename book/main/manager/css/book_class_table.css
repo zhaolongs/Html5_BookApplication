@@ -1,6 +1,6 @@
 .book_class_table{
     margin: 0.08rem;
-    height: auto;
+    height: 11.1rem;
     width: 98%;
     font-size: 0.14rem;
     border: solid 1px #e7e7e7;
@@ -11,4 +11,13 @@
     width: auto;
     font-size: 0.14rem;
     border: solid 0.5px #47802f;
+}
+
+.book_class_table_div{
+    width: auto;
+    height: 11.1rem;
+    margin-top:0.1rem;
+    margin-bottom: 0.1rem;
+    overflow: scroll;
+    overflow-x: hidden;
 }
