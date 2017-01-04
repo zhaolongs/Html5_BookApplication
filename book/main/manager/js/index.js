@@ -32,6 +32,7 @@ var homeRender = (function(){
             $('.book_add_class_home').css('display','none');
             $('.book_add_book_home').css('display','none');
 
+            getBookListData();
         }
     }
 })();
