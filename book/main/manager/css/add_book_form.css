@@ -1,0 +1,42 @@
+.add_book_page_div{
+    font-size: 0.28rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+
+.add_book_page_item{
+    padding: 0.02rem;
+    margin-top: 0.18rem;
+    margin-left: 0.1rem;
+    width: 5.5rem;
+    font-size: 0.23rem;
+}
+
+.add_book_page_item_name_div{
+    margin-top: 0.4rem;
+}
+.add_book_page_item_texttarea_div{
+    margin-top: 0.2rem;
+    height: 2rem;
+}
+.add_book_page_item_texttarea_span{
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+}
+.add_book_page_item_texttarea{
+    padding: 0.10rem;
+    height: 2rem;
+    margin-left: 0.1rem;
+    width: 5.4rem;
+}
+.add_book_page_item_file_div{
+
+    margin-top: 0.2rem;
+}
+.add_book_page_item_button{
+    margin-top: 1.2rem;
+    width: 50%;
+    margin-left: 25%;
+    padding: 0.2rem;
+}
