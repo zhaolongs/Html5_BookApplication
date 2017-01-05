@@ -24,22 +24,64 @@ function getBookListData() {
         });
 
 }
-//添加书籍分类
+//添加书籍
 function addBookRequest() {
-    var url = addBookRequest();
+    var url = addBookURL();
+    console.log("添加书籍")
+    var bookName = $('#book_name').val();
+    var bookAuthor = $('#book_author').val();
+    var bookDesc = $('#book_desc').val();
+
+    if (bookName == null || bookName.length < 0) {
+        alert("请输入书名")
+        return;
+    }
+    if (bookAuthor == null || bookAuthor.length < 0) {
+        alert("请输入书籍作者")
+        return;
+    }
+    if (bookDesc == null || bookDesc.length < 0) {
+        alert("请输入书籍描述")
+        return;
+    }
+
+    if (!("FormData" in window)) {
+        // FormData is not supported; degrade gracefully/ alert the user as appropiate
+        alert("formData is not supported ");
+        return;
+    }
+
+    var oData = new FormData(document.forms.namedItem("fileinfo"));
+    oData.append("CustomField", "This is some extra data");
+    var oReq = new XMLHttpRequest();
+    oReq.open("POST", url, true);
+    oReq.onload = function (oEvent) {
+        if (oReq.status == 200) {
+            alert("成功");
+
+        } else {
+            alert("失败" + oReq.status);
+        }
+    };
+    oReq.send(oData);
+
 }
-//删除书籍分类
-function deleteBookClassRequest() {
+//删除书籍
+function deleteBookRequest() {
     var url = deleteBookURL();
 }
-//修改书籍分类
+//修改书籍
 function updateBookRequest() {
     var url = updateBookRequest();
+
+
 }
 
 
 function createBookListTable(data) {
     var resultObj = eval('(' + data + ')')
+    //$("#book_list_table  tr:not(:first)").html("");
+    $("#book_list_table  tr:not(:first)").remove();
     var $bookListTable = $('#book_list_table');
     var $trTitle = $('<tr> </tr>');
     var $thTitleNumber = $('<th class="bnumber">类别</th>');
@@ -50,34 +92,40 @@ function createBookListTable(data) {
     $trTitle.append($thTitleBookName);
     $trTitle.append($thTitleBookDesc);
     $trTitle.append($thTitleDetale);
-
     $bookListTable.append($trTitle);
 
-    for (var i = 0; i < resultObj.length; i++) {
-        var obj = resultObj[i];
-        var $tr = $('<tr></tr>');
-        var $tdNumber = $('<th class="bnumber">' + (i + 1) + '</th>');
-        var $tdBookName = $('<th class="bname">' + obj.bname + '</td>');
-        var $tdBookDesc = $('<th class="bdesc">' + obj.bdesc + '</td>');
-        var $tdDeatl = $(
-            '<td class="balert">' +
-            '<input' +
-            ' class="balert_button" ' +
-            'type="button" value="详情" ' +
-            'onclick="+bookListTableItemClick(this)" ' +
-            'idd="' + obj.uuid +
-            '">' +
-            '</td>');
-        $tr.append($tdNumber);
-        $tr.append($tdBookName);
-        $tr.append($tdBookDesc);
-        $tr.append($tdDeatl);
 
-        $bookListTable.append($tr);
+    if (resultObj.length == 0) {
+        $bookListTable.append($(
+            '<tr><th colspan="4">无数据，请点击添加</th></tr>'
+        ));
+    } else {
+        for (var i = 0; i < resultObj.length; i++) {
+            var obj = resultObj[i];
+            var $tr = $('<tr></tr>');
+            var $tdNumber = $('<th class="bnumber">' + (i + 1) + '</th>');
+            var $tdBookName = $('<th class="bname">' + obj.bname + '</td>');
+            var $tdBookDesc = $('<th class="bdesc">' + obj.bdesc + '</td>');
+            var $tdDeatl = $(
+                '<td class="balert">' +
+                '<input' +
+                ' class="balert_button" ' +
+                'type="button" value="详情" ' +
+                'onclick="+bookListTableItemClick(this)" ' +
+                'idd="' + obj.uuid +
+                '">' +
+                '</td>');
+            $tr.append($tdNumber);
+            $tr.append($tdBookName);
+            $tr.append($tdBookDesc);
+            $tr.append($tdDeatl);
+
+            $bookListTable.append($tr);
+        }
+
     }
-
     $bookListTable.css({
-        "height": "11.1rem",
+        "height": "auto",
         "width": "98%",
         "margin-left": "1%",
         "margin-right": "1%",
@@ -120,7 +168,8 @@ function createBookListTable(data) {
         "border": "solid 0.5px #47802f",
         "white-space": "nowrap",
         "text-overflow": "ellipsis",
-        "overflow": "hidden"
+        "overflow": "hidden",
+        "z-index":"10"
     });
 
     $('.balert_button').css(
@@ -130,6 +179,7 @@ function createBookListTable(data) {
             "margin-right": "1%"
         }
     );
+
 
 }
 
