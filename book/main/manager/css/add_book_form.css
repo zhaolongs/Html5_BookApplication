@@ -40,3 +40,8 @@
     margin-left: 25%;
     padding: 0.2rem;
 }
+
+#add_book_bookclass_select{
+    margin-top: .2rem;
+    width: 5rem;
+}

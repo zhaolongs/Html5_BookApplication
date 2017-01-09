@@ -48,6 +48,7 @@ var addBookRender = (function(){
             $('.book_add_book_home').css('display','block');
             $('.book_list_home').css('display','none');
 
+            addBookGetBookClassListRequest();
         }
     }
 })();

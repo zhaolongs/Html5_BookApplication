@@ -66,6 +66,42 @@ function addBookRequest() {
     oReq.send(oData);
 
 }
+
+function addBookGetBookClassListRequest(){
+    var $bookClassSelect = $('#add_book_bookclass_select');
+
+    var bookClassUrl = getBookClassListURL();
+
+    $.get(
+        bookClassUrl,
+        {},
+        function (data, textStatus) {
+            if(textStatus == "success") {
+                console.log("获取书籍分类列表 响应数据为 " + decodeURI(data) + " 请求结果为  " + textStatus);
+                var obj = eval('(' + data + ')');
+                var arr = obj.contentList;
+
+                for (var i = 0; i <= arr.length; i++) {
+
+                    if(i==0){
+                    var $no = $('<option>无</option>');
+                        $bookClassSelect.append($no);
+                    }else{
+                        var child = arr[(i-1)];
+                        var $childOptions = $('<option>'+child.bcname+'</option>');
+                        $bookClassSelect.append($childOptions);
+                    }
+                }
+
+
+            }else{
+                alert("获取书籍分类列表异常")
+            }
+
+        });
+}
+
+
 //删除书籍
 function deleteBookRequest() {
     var url = deleteBookURL();
@@ -76,6 +112,9 @@ function updateBookRequest() {
 
 
 }
+
+
+
 
 
 function createBookListTable(data) {
